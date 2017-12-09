@@ -3,21 +3,14 @@
     JS-808
   </h1>
   <div class="drum-machine--config">
-    <button mat-icon-button color="primary">
-      <mat-icon>play_arrow</mat-icon>
-    </button>
-    <button mat-icon-button color="primary">
-      <mat-icon>stop</mat-icon>
-    </button>
-    <mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
     <mat-form-field>
-      <mat-select placeholder="Select">
-        <mat-option value="option">Option 1</mat-option>
-        <mat-option value="option">Option 2</mat-option>
-        <mat-option value="option">Option 3</mat-option>
+      <mat-select [(value)]="selectedTrackIndex">
+        <mat-option *ngFor="let track of tracks; let i = index" [value]="i">
+          Track {{ i + 1 }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 </div>
 
-<drum-machine [track]="track"></drum-machine>
+<drum-machine [track]="tracks[selectedTrackIndex]"></drum-machine>
