@@ -1,3 +1,30 @@
+<div class="drum-machine--controls">
+  <button mat-icon-button
+          color="primary"
+          *ngIf="!playing || paused"
+          (click)="play()">
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+  <button mat-icon-button
+          color="primary"
+          *ngIf="playing && !paused"
+          (click)="pause()">
+    <mat-icon>pause</mat-icon>
+  </button>
+  <button mat-icon-button
+          color="primary"
+          (click)="stop()">
+    <mat-icon>stop</mat-icon>
+  </button>
+  <mat-form-field>
+    <input matInput
+          placeholder="BPM"
+          type="number"
+          [ngModel]="bpm"
+          (ngModelChange)="bpmChanged($event)">
+  </mat-form-field>
+</div>
+
 <div class="drum-machine">
   <h3></h3>
   <h3>Kick</h3>
@@ -5,11 +32,20 @@
   <h3>Open Hat</h3>
   <h3>Closed Hat</h3>
   
-  <ng-container *ngFor="let bar of track; let i = index">
-    <div class="drum-machine--bar-title">{{ i + 1 }}</div>
-    <div>k</div>
-    <div>s</div>
-    <div>oh</div>
-    <div>ch</div>
+  <ng-container *ngFor="let beat of track; let i = index">
+    <div class="drum-machine--beat-title">{{ i + 1 }}</div>
+    <div [class.play]="currentBeat === i && beat.kick"
+         (click)="select">
+      {{ beat.kick ? 'X' : null }}
+    </div>
+    <div [class.play]="currentBeat === i && beat.snare">
+      {{ beat.snare ? 'X' : null }}
+    </div>
+    <div [class.play]="currentBeat === i && beat.openHat">
+      {{ beat.openHat ? 'X' : null }}
+    </div>
+    <div [class.play]="currentBeat === i && beat.closedHat">
+      {{ beat.closedHat ? 'X' : null }}
+    </div>
   </ng-container>
 </div>
