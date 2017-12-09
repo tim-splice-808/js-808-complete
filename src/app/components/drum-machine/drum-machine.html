@@ -35,16 +35,19 @@
   <ng-container *ngFor="let beat of track; let i = index">
     <div class="drum-machine--beat-title">{{ i + 1 }}</div>
     <div [class.play]="currentBeat === i && beat.kick"
-         (click)="select">
+         (click)="selectAtBeat('kick', i)">
       {{ beat.kick ? 'X' : null }}
     </div>
-    <div [class.play]="currentBeat === i && beat.snare">
+    <div [class.play]="currentBeat === i && beat.snare"
+         (click)="selectAtBeat('snare', i)">
       {{ beat.snare ? 'X' : null }}
     </div>
-    <div [class.play]="currentBeat === i && beat.openHat">
+    <div [class.play]="currentBeat === i && beat.openHat"
+         (click)="selectAtBeat('openHat', i)">
       {{ beat.openHat ? 'X' : null }}
     </div>
-    <div [class.play]="currentBeat === i && beat.closedHat">
+    <div [class.play]="currentBeat === i && beat.closedHat"
+         (click)="selectAtBeat('closedHat', i)">
       {{ beat.closedHat ? 'X' : null }}
     </div>
   </ng-container>

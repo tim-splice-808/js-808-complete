@@ -42,6 +42,10 @@ export class DrumMachine {
     }, (((60/this.bpm)*4)/this.track.length) * 1000);
   }
 
+  public selectAtBeat(sound: string, index: number) {
+    this.track[index][sound] = !this.track[index][sound];
+  }
+
   public stop() {
     this.playing = false;
     this.paused = false;
