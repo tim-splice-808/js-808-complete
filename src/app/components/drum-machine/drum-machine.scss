@@ -1,0 +1,17 @@
+.drum-machine {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1em;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+  .drum-machine--bar-title {
+    align-self: end;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  div {
+    border: black solid;
+  }
+}

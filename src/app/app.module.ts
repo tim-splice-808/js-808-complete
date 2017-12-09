@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule, MatFormFieldModule, MatSelectModule, MatSliderModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { DrumMachine } from './components/drum-machine/drum-machine';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DrumMachine
   ],
   imports: [
     BrowserAnimationsModule,
