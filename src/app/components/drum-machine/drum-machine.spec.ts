@@ -73,7 +73,7 @@ describe('DrumMachine', () => {
   }))
   it(`correctly toggles instrument sound`, async(() => {
     expect(component.track[0].snare).toBe(false);
-    component.selectAtBeat('snare', 0);
+    component.toggleSoundAtBeat('snare', 0);
     expect(component.track[0].snare).toBe(true);
   }))
 });
