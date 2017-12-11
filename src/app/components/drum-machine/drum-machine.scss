@@ -1,31 +1,68 @@
+$standard-border: black solid 1px;
+
 .drum-machine--controls {
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 10px;
+
+  .bpm-label {
+    align-self: center;
+    display: flex;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  input {
+    border: $standard-border;
+    font-size: 1em;
+    font-weight: bold;
+    width: 42px;
+  }
+
+  .material-icons {
+    border: $standard-border;
+    cursor: pointer;
+    font-size: 2.2em;
+
+    &.play-icon, &.pause-icon {
+      margin-right: 2px;
+      margin-left: 2px;
+    }
+  }
 }
 
 .drum-machine {
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 1em;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 1em;
+  grid-template-rows: 100% 1fr 1fr 1fr 1fr;
 
   .drum-machine--beat-title {
     align-self: end;
-    border: none;
+    border-bottom: $standard-border;
+    border-top: $standard-border;
     font-weight: bold;
+    height: 100%;
     text-align: center;
+    padding-left: 1em;
   }
 
-  div {
+  div:not(.drum-machine--beat-title) {
     align-items: center;
-    border: black solid;
+    border: $standard-border;
     color: black;
     cursor: pointer;
     display: flex;
+    font-size: 1.7em;
     justify-content: center;
+    margin-left: .5em;
 
     &.play {
       background: #ffe082;
     }
+  }
+
+  h3 {
+    text-align: right;
   }
 }

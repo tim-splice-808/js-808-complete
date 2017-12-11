@@ -1,54 +1,50 @@
 <div class="drum-machine--controls">
-  <button mat-icon-button
-          color="primary"
-          *ngIf="!playing || paused"
-          (click)="play()">
-    <mat-icon>play_arrow</mat-icon>
-  </button>
-  <button mat-icon-button
-          color="primary"
-          *ngIf="playing && !paused"
-          (click)="pause()">
-    <mat-icon>pause</mat-icon>
-  </button>
-  <button mat-icon-button
-          color="primary"
-          (click)="stop()">
-    <mat-icon>stop</mat-icon>
-  </button>
-  <mat-form-field>
-    <input matInput
-          placeholder="BPM"
-          type="number"
-          [ngModel]="bpm"
-          (ngModelChange)="bpmChanged($event)">
-  </mat-form-field>
+  <i class="material-icons"
+     (click)="stop()">
+    stop
+  </i>
+  <i class="material-icons play-icon"
+     *ngIf="!playing || paused"
+     (click)="play()">
+    play_arrow
+  </i>
+  <i class="material-icons pause-icon"
+     *ngIf="playing && !paused"
+     (click)="pause()">
+    pause
+  </i>
+  <input type="number"
+         [ngModel]="bpm"
+         (ngModelChange)="bpmChanged($event)">
+  <span class="bpm-label">
+    BPM
+  </span>
 </div>
 
 <div class="drum-machine">
-  <h3></h3>
-  <h3>Kick</h3>
-  <h3>Snare</h3>
-  <h3>Open Hat</h3>
-  <h3>Closed Hat</h3>
+  <div class="drum-machine--beat-title"></div>
+  <h3>KICK</h3>
+  <h3>SNARE</h3>
+  <h3>OPEN HAT</h3>
+  <h3>CLOSED HAT</h3>
   
   <ng-container *ngFor="let beat of track; let i = index">
     <div class="drum-machine--beat-title">{{ i + 1 }}</div>
     <div [class.play]="currentKickBeat === i"
          (click)="toggleSoundAtBeat('kick', i)">
-      {{ beat.kick ? 'X' : null }}
+      {{ beat.kick ? '&#9679;' : null }}
     </div>
     <div [class.play]="currentSnareBeat === i"
          (click)="toggleSoundAtBeat('snare', i)">
-      {{ beat.snare ? 'X' : null }}
+      {{ beat.snare ? '&#9679;' : null }}
     </div>
     <div [class.play]="currentOpenHatBeat === i"
          (click)="toggleSoundAtBeat('openHat', i)">
-      {{ beat.openHat ? 'X' : null }}
+      {{ beat.openHat ? '&#9679;' : null }}
     </div>
     <div [class.play]="currentClosedHatBeat === i"
          (click)="toggleSoundAtBeat('closedHat', i)">
-      {{ beat.closedHat ? 'X' : null }}
+      {{ beat.closedHat ? '&#9679;' : null }}
     </div>
   </ng-container>
 </div>

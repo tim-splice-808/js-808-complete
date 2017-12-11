@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
-
 import { AppComponent } from './app.component';
 import { DrumMachine } from './components/drum-machine/drum-machine';
 
@@ -17,13 +15,7 @@ import { DrumMachine } from './components/drum-machine/drum-machine';
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    FormsModule,
-
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatSelectModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

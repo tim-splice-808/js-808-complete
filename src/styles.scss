@@ -1,15 +1,8 @@
-@import '~@angular/material/theming';
-@include mat-core();
-
-// Define an alternate dark theme.
-$dark-primary: mat-palette($mat-blue-grey);
-$dark-accent: mat-palette($mat-amber, A200);
-$dark-theme: mat-light-theme($dark-primary, $dark-accent);
-
-// Include the default theme styles.
-@include angular-material-theme($dark-theme);
-
-
 body {
   font-family: "Open Sans"
+}
+
+.drum-machine--controls {
+  width: 80%;
+  margin-top: -40px;
 }

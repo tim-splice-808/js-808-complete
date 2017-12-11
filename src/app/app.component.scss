@@ -1,5 +1,18 @@
-.drum-machine--header {
-  align-items: center;
+.app--header {
   display: flex;
+  font-size: 2em;
   justify-content: space-between;
+  padding-left: 15px;
+}
+
+.app--track-selection {
+  align-self: center;
+  display: flex;
+  width: 19%;
+
+  select {
+    font-size: .6em;
+    font-weight: bold;
+    width: 100%;
+  }
 }

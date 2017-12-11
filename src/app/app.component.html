@@ -1,15 +1,11 @@
-<div class="drum-machine--header">
-  <h1>
-    JS-808
-  </h1>
-  <div class="drum-machine--config">
-    <mat-form-field>
-      <mat-select [(value)]="selectedTrackIndex">
-        <mat-option *ngFor="let track of tracks; let i = index" [value]="i">
-          Track {{ i + 1 }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+<div class="app--header">
+  JS-808
+  <div class="app--track-selection">
+    <select [(ngModel)]="selectedTrackIndex">
+      <option *ngFor="let track of tracks; let i = index" [ngValue]="i">
+        Track {{ i + 1 }}
+      </option>
+    </select>
   </div>
 </div>
 
