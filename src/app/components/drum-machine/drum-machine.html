@@ -1,17 +1,17 @@
 <div class="drum-machine--controls">
   <i class="material-icons"
-     (click)="stop()">
-    stop
-  </i>
-  <i class="material-icons play-icon"
      *ngIf="!playing || paused"
      (click)="play()">
     play_arrow
   </i>
-  <i class="material-icons pause-icon"
+  <i class="material-icons"
      *ngIf="playing && !paused"
      (click)="pause()">
     pause
+  </i>
+  <i class="material-icons stop-icon"
+     (click)="stop()">
+    stop
   </i>
   <input type="number"
          [ngModel]="bpm"
