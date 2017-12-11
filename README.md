@@ -2,5 +2,5 @@
 
 ## To Run
 
-npm install -g http-server
-npm run serve
+1. npm install -g http-server
+2. npm run serve
